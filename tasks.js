@@ -49,7 +49,7 @@ const checkIfInstanceOf = function(obj, classFunction) {
 };
 
 //Why do we need to check proto if we'll just have same prototype for both, right?
-//better approach:
+//better approach: 
 const checkIfInstanceOf = function(obj, classFunction) {
     while(obj!=null){
         if(obj.constructor === classFunction)
