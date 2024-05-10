@@ -62,3 +62,36 @@ const checkIfInstanceOf = function(obj, classFunction) {
 };
 
 //3. Return to leetcode after break
+//Using booleans to determine palindrome
+
+function palindrome(string) {
+  // enter the codes
+  let strArr = string.toLowerCase().split('');
+  let newArr = string.toLowerCase().split('');
+  
+  strArr.reverse();
+  
+  let isPalindrome = false;
+  
+  strArr = strArr.filter(function(item){
+    return /[a-z]/.test(item);
+  });
+  
+  newArr = newArr.filter(function(item){
+    return /[a-z]/.test(item);
+  });
+  
+  let len = strArr.length;
+  let end = len - 1;
+  
+  for(let i=0; i < len; i++){
+    if(strArr[i] == newArr[end - i]){
+      isPalindrome = true;
+    } else {
+      isPalindrome = false;
+      break;
+    }
+  }
+  
+  return isPalindrome;
+}
