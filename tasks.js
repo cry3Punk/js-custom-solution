@@ -115,3 +115,19 @@ Array.prototype.reduce2 = function (f, result) {
     
   return result;
 };
+
+//a taste of Curry
+
+var obj = {
+  a: 'foo',
+  b: function (a) { return this.a + a; }
+}
+
+obj.foobar = curry(obj.b, 'bar');
+obj.foobar()
+
+function curry(fun,...args) {
+    return function(...arg2) {
+    return fun.call(this,...args,...arg2);
+  }
+}
