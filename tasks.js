@@ -199,3 +199,15 @@ function anagramDifference(str1,str2){
     }
     return result 
 }
+
+//alphabetize
+
+function alphabetized(s) {
+ let ans="";
+ for (var i=97; i<123; ++i)
+   for (var j=0; j<s.length; j++)
+     if (s[j].toLowerCase().charCodeAt()==i)
+     ans+=s[j]
+    
+ return ans
+}
